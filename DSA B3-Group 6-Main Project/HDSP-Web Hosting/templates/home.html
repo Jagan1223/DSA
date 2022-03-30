@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>HDSP</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body background="/static/images/WP74.png">
+<!-- Input Form -->
+<div  class="input form">
+  <form action="{{url_for('predict')}}"method="post" id="input head">
+
+    <h1 id="heading">Heart Disease and Stroke Prediction </h1>
+
+    <h3 id="input">Year
+    <input type="text" name="aa" placeholder="Enter the value">
+
+    <id="input">   Data Value
+    <input type="text" name="ae" placeholder="Enter the value"></h3>
+    
+    <h3 <label for="Indicator">Choose the Indicator:</label>
+      <select type="text" name="ad" id="input">
+        <option value="0">Acute myocardial infarction (heart attack) among US adults (18+)</option>
+        <option value="1">Cholesterol screening in the past 5 years among US adults (20+)</option>
+        <option value="2">Consuming fruits and vegetables less than 5 times per day among US adults (18+)</option>
+        <option value="3">Coronary heart disease among US adults (18+)</option>
+        <option value="4">Current smoking among US adults (18+)</option>
+        <option value="5" selected>Diabetes among US adults (18+)</option>
+        <option value="6">Healthy weight among US adults (20+)</option>
+        <option value="7">High total cholesterol among US adults (20+)</option>
+        <option value="8">Hypertension among US adults (18+)</option>
+        <option value="9">Hypertension medication use among US adults (18+) with hypertension</option>
+        <option value="10">Major cardiovascular disease among US adults (18+)</option>
+        <option value="11">Obesity among US adults (20+)</option>
+        <option value="12">Physical inactivity among US adults (18+)</option>
+        <option value="13">Post-hospitalization rehabilitation among heart attack patients, US adults (18+)</option>
+        <option value="14">Stroke among US adults (18+)</option>
+      </select></h3>
+
+    <h3 <label for="Topic">Choose the Topic:</label>
+      <select type="text" name="ac" id="input">
+        <option value="0">Acute Myocardial Infarction (Heart Attack)</option>    
+        <option value="1">Cholesterol Abnormalities</option>                     
+        <option value="2">Hypertension</option>                                  
+        <option value="3">Obesity</option>                                       
+        <option value="4">Coronary Heart Disease</option>                         
+        <option value="5" selected>Diabetes</option>                                      
+        <option value="6">Major Cardiovascular Disease</option>                   
+        <option value="7">Nutrition</option>                                      
+        <option value="8">Physical Inactivity</option>                            
+        <option value="9">Smoking</option>                                        
+        <option value="10">Stroke</option>                                         
+      </select></h3>
+
+    <h3 <label for="PriorityArea">Choose the PriorityArea:</label>
+      <select type="text" name="aj" id="input">
+        <option value="0">None</option>
+        <option value="1">ABCS</option>
+        <option value="2">Healthy people 2020</option>
+        <option value="3" selected>Million Hearts</option>
+      </select></h3>
+   
+      <h3 <label for="Break_out">Choose the Break-out:</label>
+        <select type="text" name="ai" id="input">
+          <option value="0">Non-Hispanic Black</option>   
+          <option value="0">Overall</option>               
+          <option value="0">Non-Hispanic White</option>    
+          <option value="0">Male</option>                  
+          <option value="0">Non-Hispanic Asian</option>    
+          <option value="0" selected>Female</option>                
+          <option value="0">Hispanic</option>              
+          <option value="0">Other</option>                 
+          <option value="0">65+</option>                   
+          <option value="0">35+</option>                   
+          <option value="0">75+</option>                   
+          <option value="0">45-64</option>                 
+          <option value="0">25-44</option>                
+          <option value="0">18-24</option>             
+          <option value="0">20-24</option>                  
+        </select></h3>
+
+      <h3 <label for="Location">Choose a Location:</label>
+        <select type="text" name="ab" id="input">
+          <option value="0">Alabama</option>
+          <option value="1">Alaska</option>
+          <option value="2">Nevada</option>
+          <option value="3">New Hampshire</option>
+          <option value="4">New Jersey</option>             
+          <option value="5">New Mexico</option>              
+          <option value="6" selected>New York</option> 
+          <option value="7">North Carolina</option>          
+          <option value="8">North Dakota</option>            
+          <option value="9">Ohio</option>                    
+          <option value="10">Oklahoma</option>                
+          <option value="11">Oregon</option>                  
+          <option value="12">Pennsylvania</option>            
+          <option value="13">Rhode Island</option>            
+          <option value="14">South Carolina</option>          
+          <option value="15">South Dakota</option>           
+          <option value="16">Tennessee</option>          
+          <option value="17">Texas</option>                   
+          <option value="18">Utah</option>                    
+          <option value="19">Vermont</option>                 
+          <option value="20">Virginia</option>                
+          <option value="21">Washington</option>              
+          <option value="22">Washington, DC</option>          
+          <option value="23">West Virginia</option>           
+          <option value="24">Wisconsin</option>               
+          <option value="25">Nebraska</option>               
+          <option value="26">Montana</option>                 
+          <option value="27">Missouri</option>                
+          <option value="28">Illinois</option>                
+          <option value="29">Arizona</option>                
+          <option value="30">Arkansas</option>                
+          <option value="31">California</option>              
+          <option value="32">Colorado</option>                
+          <option value="33">Connecticut</option>             
+          <option value="34">Delaware</option>                
+          <option value="35">Florida</option>                 
+          <option value="36">Georgia</option>                
+          <option value="37">Hawaii</option>                  
+          <option value="38">Idaho</option>                   
+          <option value="39">Indiana</option>                 
+          <option value="40">Mississippi</option>             
+          <option value="41">Iowa</option>                    
+          <option value="42">Kansas</option>                  
+          <option value="43">Kentucky</option>                
+          <option value="44">Louisiana</option>              
+          <option value="45">Maine</option>                   
+          <option value="46">Maryland</option>                
+          <option value="47">Massachusetts</option>           
+          <option value="48">Median of all states</option>    
+          <option value="49">Michigan</option>                
+          <option value="50">Minnesota</option>               
+          <option value="51">Wyoming</option>                 
+        </select></h3>
+    <br>
+    <br>
+    <button id="submit" type="submit">Submit</button>
+    <button id='Reset' type='Reset'>Reset</button>
+  </form>
+ 
+</div>
+   
+</body>
+</html>
